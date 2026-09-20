@@ -31,7 +31,7 @@ function parseArguments() {
     playground: values.playground,
     printSize: values["print-size"],
     compareSize: values["compare-size"],
-    minify: values.minify ? true : values["no-minify"] ? false : undefined,
+    minify: values.minify ? true : !values["no-minify"] && undefined,
     clean: values.clean,
     saveAs: values["save-as"],
     reports: values.report,

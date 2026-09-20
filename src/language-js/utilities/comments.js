@@ -63,7 +63,7 @@ function hasComment(node, flags, fn) {
     return false;
   }
   const test = getCommentTestFunction(flags, fn);
-  return test ? node.comments.some(test) : true;
+  return !test || node.comments.some(test);
 }
 
 /**

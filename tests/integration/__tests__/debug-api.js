@@ -39,8 +39,7 @@ describe("API", () => {
 
   test("prettier.printToDoc", async () => {
     const hasCursor = (doc) =>
-      findInDoc(doc, (doc) => (doc.type === "cursor" ? true : undefined)) ??
-      false;
+      findInDoc(doc, (doc) => doc.type === "cursor" || undefined) ?? false;
 
     expect(hasCursor(doc)).toBe(false);
 

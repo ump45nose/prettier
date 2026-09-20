@@ -59,7 +59,7 @@ export default {
         const { file, functions } = option;
         return [
           path.join(import.meta.dirname, "../../..", file),
-          functions ? new Set(functions) : true,
+          !functions || new Set(functions),
         ];
       }),
     );
